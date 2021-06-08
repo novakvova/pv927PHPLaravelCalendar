@@ -27,7 +27,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('events.create');
     }
 
     /**
@@ -38,7 +38,22 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('images'), $imageName);
+
+        //dd($request);
+        Event::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $imageName
+        ]);
+
+        return redirect()->route('events.index')->with('success', 'Event created successfully');
+
     }
 
     /**

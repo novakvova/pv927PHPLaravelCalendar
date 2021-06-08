@@ -43,6 +43,7 @@
     <h4>kingsconsult001@gmail.com</h4>
 
 </div>
+@yield('scripts')
 </body>
 
 </html>
