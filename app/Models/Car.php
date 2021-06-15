@@ -12,6 +12,6 @@ class Car extends Model
 
     public function CarImages()
     {
-        $this->hasMany(CarImage::class, 'id_car');
+        return $this->hasMany(CarImage::class, 'id_car');
     }
 }
