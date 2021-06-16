@@ -20,3 +20,5 @@ Route::get('/', function () {
 
 Route::resource('events', EventController::class);
 Route::get('/cars', [CarController::class, "Index"])->name("cars.index");
+Route::get('/cars/create', [CarController::class, "Create"])->name("cars.create");
+Route::post('/cars/store', [CarController::class, "Store"])->name("cars.store");
