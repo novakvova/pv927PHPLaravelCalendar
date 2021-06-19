@@ -37,7 +37,7 @@
                 </td>
                 <td>
                     @foreach ($car->CarImages as $img)
-                        <img src="images/{{ $img->name }}" width="100px" alt="">
+                        <img src="/storage/files/{{ $img->name }}" width="100px" alt="">
                     @endforeach
                 </td>
 
